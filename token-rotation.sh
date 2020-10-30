@@ -50,7 +50,7 @@ wget  -O /tmp/Dynatrace-OneAgent.sh \
     "$dtEnv/deployment/installer/agent/unix/default/latest?arch=x86&flavor=default" \
     --header="Authorization: Api-Token $newToken"  
 
-#/bin/sh /tmp/Dynatrace-OneAgent.sh  
+#sudo /bin/sh /tmp/Dynatrace-OneAgent.sh  
 
 # delete old token??
 curl -X DELETE \
