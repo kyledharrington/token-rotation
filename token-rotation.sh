@@ -46,11 +46,11 @@ curl -X POST \
 echo "$newToken"
 
 # download/ install....
-wget  -O Dynatrace-OneAgent.sh \
+wget  -O /tmp/Dynatrace-OneAgent.sh \
     "$dtEnv/deployment/installer/agent/unix/default/latest?arch=x86&flavor=default" \
     --header="Authorization: Api-Token $newToken"  
 
-#/bin/sh Dynatrace-OneAgent.sh  
+#/bin/sh /tmp/Dynatrace-OneAgent.sh  
 
 # delete old token??
 curl -X DELETE \
