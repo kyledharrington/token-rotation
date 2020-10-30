@@ -8,7 +8,7 @@ dtEnv="https://rxc68685.live.dynatrace.com/api/v1"
 masterToken="LhHZ7YCfRh6F26AQqKBH_"
 
 # Setting a static token name for PoC. 
-# Token ID could possibly be stored in Vault/ Facts for inital subsequent runs
+# Token ID could possibly be stored in Vault/ Facts for inital subsequent runs?
 installerTokenName="roating-passtoken"
 
 # Pulls existing token list, locate the current deployment token ID & set as variable
@@ -21,7 +21,7 @@ curl -X GET \
     | jq -r '.values[] | select(.name=="'$installerTokenName'") | .id'
 )
 # Testing output - DELETE ME
-echo "$oldTokenID"
+#echo "$oldTokenID"
 
 # Creates new token PaaS token with 15 TTL
 newToken=$(
@@ -43,7 +43,7 @@ curl -X POST \
 )
 
 # Testing output - DELETE ME
-echo "$newToken"
+#echo "$newToken"
 
 # download/ install....
 wget  -O /tmp/Dynatrace-OneAgent.sh \
